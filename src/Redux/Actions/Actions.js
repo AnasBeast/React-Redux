@@ -1,16 +1,25 @@
-import { DECREMENT, INCREMENT } from "../Constants/Action_type"
+import { TASKS } from "../Constants/Action_type"
+import { ADDTASK } from "../Constants/Action_type"
+import { DONETASK } from "../Constants/Action_type"
 
 
-export const increment = (payload) => {
+export const taskslist = (payload) => {
     return {
-        type :INCREMENT ,
+        type :TASKS ,
         payload
     }
 }
 
-export const decrement = (payload) => {
+export const addTask = (payload) => {
     return {
-        type:DECREMENT,
+        type :ADDTASK ,
+        payload
+    }
+}
+
+export const doneTask = (payload) => {
+    return {
+        type :DONETASK ,
         payload
     }
 }

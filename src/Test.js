@@ -1,20 +1,31 @@
 import React, { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { increment,decrement } from './Redux/Actions/Actions'
+import TaskCard from './components/TaskCard'
+import { taskslist } from './Redux/Actions/Actions'
+import { addTask } from './Redux/Actions/Actions'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import "./style.css"
+import AddTask from './components/AddTask'
+import ListTask from './components/ListTask'
+
 const Test = () => {
     const dispatch = useDispatch()
-    const counter = useSelector(state=> state.counterReducer.counter)
-    const state = useSelector(state=> state)
+    const state = useSelector(state=> state.tasksList)
     console.log(state)
-    const [number,setNumber] = useState(0)
-  return (
-    <div>
-        <input type="text" onChange={(e)=> setNumber(e.target.value) }/>
-    <button onClick={()=> dispatch(increment(+number))}>Plus</button>
-    <h1>Counter :{counter}</h1>
-    <button onClick={()=>dispatch(decrement(+number))}>Minus</button>
-    </div>
-  )
+    const [task ,setTaskName] = useState("")
+    const [filter , setTaskFilter] = useState(true)
+    return (
+      <div>
+        <AddTask />
+        <h1 className='title'>TO DO LIST :</h1>
+
+        
+        <ListTask/>
+        
+    
+      </div>
+    )
 }
 
 export default Test
