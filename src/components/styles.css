@@ -117,8 +117,8 @@
 
 .container .card{
   position: relative;
-  width: 450px;
-  height: 500px;
+  width: 250px;
+  height: 300px;
   background: #232323;
   border-radius: 20px;
   overflow: hidden;
@@ -294,9 +294,14 @@
 
 .task-name{
   color: white;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .task-number{
   color: white;
+  font-size: 1.5rem;
+}
+
+.card-buttons{
+  gap: 20px;  
 }

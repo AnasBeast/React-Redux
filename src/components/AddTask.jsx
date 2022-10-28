@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import TaskCard from '../components/TaskCard'
 import { taskslist } from '../Redux/Actions/Actions'
 import { addTask } from '../Redux/Actions/Actions'
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/esm/Button'
 import Form from 'react-bootstrap/Form';
 import "../style.css"
 

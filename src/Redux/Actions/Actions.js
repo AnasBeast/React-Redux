@@ -1,6 +1,7 @@
-import { TASKS } from "../Constants/Action_type"
+import { EDITTASK, TASKS } from "../Constants/Action_type"
 import { ADDTASK } from "../Constants/Action_type"
 import { DONETASK } from "../Constants/Action_type"
+import { UNDONETASK } from "../Constants/Action_type"
 
 
 export const taskslist = (payload) => {
@@ -20,6 +21,20 @@ export const addTask = (payload) => {
 export const doneTask = (payload) => {
     return {
         type :DONETASK ,
+        payload
+    }
+}
+
+export const undoneTask = (payload) => {
+    return {
+        type :UNDONETASK ,
+        payload
+    }
+}
+
+export const editTask = (payload) => {
+    return {
+        type :EDITTASK ,
         payload
     }
 }

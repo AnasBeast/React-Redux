@@ -17,7 +17,7 @@
 }
 
 .flex-row>.container{
-    width: 450px;
+    width: auto;
 }
 
 .filter-section{

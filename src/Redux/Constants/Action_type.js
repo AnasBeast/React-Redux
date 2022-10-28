@@ -1,3 +1,5 @@
-export const TASKS={}
-export const ADDTASK={}
-export const DONETASK={}
+export const TASKS="TASKS"
+export const ADDTASK="ADDTASK"
+export const DONETASK="DONETASK"
+export const UNDONETASK="UNDONETASK"
+export const EDITTASK="EDITTASK"

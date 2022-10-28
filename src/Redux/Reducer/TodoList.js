@@ -1,6 +1,7 @@
-import {TASKS } from "../Constants/Action_type";
+import {EDITTASK, TASKS } from "../Constants/Action_type";
 import {ADDTASK } from "../Constants/Action_type";
 import {DONETASK } from "../Constants/Action_type";
+import {UNDONETASK } from "../Constants/Action_type";
 
 
 let initialState= {
@@ -12,18 +13,10 @@ export const tasksReducer = (state=initialState,action) => {
     const {type,payload} = action ;
 
     switch (type) {
-        case TASKS:
-            
-            return {
-                
-                tasksList : state.tasksList
-            }
-            
-            break;
         case ADDTASK:
-            const len = state.tasksList.length-1;
+            
             state.tasksList.push({
-                id : len +1,
+                id : Math.random(),
                 description : payload.task,
                 isDone : false
             })
@@ -32,8 +25,24 @@ export const tasksReducer = (state=initialState,action) => {
             }
             break;
         case DONETASK : 
-            const id = payload;
-            state.tasksList[id].isDone = true;
+            
+            state.tasksList.find((task)=>task.id==payload).isDone = true;
+            
+            return{
+                tasksList : state.tasksList
+            }
+            break;
+        case UNDONETASK : 
+            
+            state.tasksList.find((task)=>task.id==payload).isDone = false;
+            
+            return{
+                tasksList : state.tasksList
+            }
+            break;
+        case EDITTASK : 
+            
+            state.tasksList.find((task)=>task.id==payload.id).description = payload.description;
             
             return{
                 tasksList : state.tasksList

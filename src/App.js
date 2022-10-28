@@ -11,7 +11,7 @@ function App() {
   
   // console.log(counter)
   return (
-    <div className='App' style={{"height":"100vh","backgroundImage":"url(https://gomytech.gomycode.co/content/images/2020/12/bah-launch-01-min.jpg)","backgroundSize":"cover"}}>
+    <div className='App' style={{"minHeight":"100vh",'height':"100%","backgroundImage":"url(https://gomytech.gomycode.co/content/images/2020/12/bah-launch-01-min.jpg)","backgroundSize":"cover"}}>
       <h1 style={{"color" : "greenyellow"}}>Checkpoint REDUX</h1>
       
       <Test/>

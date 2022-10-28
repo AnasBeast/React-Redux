@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import TaskCard from './TaskCard'
 import "../style.css"
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/esm/Button'
 
 const ListTask = () => {
     const dispatch = useDispatch()
@@ -34,13 +34,14 @@ const ListTask = () => {
             </div>
         <div className='flex-row'>
             
-            {state.map((task)=>(
-                <>
-                {filter===true &&  <TaskCard prop={task}/>}
-                {filter==="Done" && task.isDone==true && <TaskCard prop={task}/>}
-                {filter==="Not Done" && task.isDone==false && <TaskCard prop={task}/>}
+            {state.map((task,index)=>(
+               
+                <div key={index}>
+                {filter===true &&  <TaskCard prop={task} index={index}/>}
+                {filter==="Done" && task.isDone==true && <TaskCard prop={task} index={index}/>}
+                {filter==="Not Done" && task.isDone==false && <TaskCard prop={task} index={index}/>}
 
-                </>
+                </div>
             
             ))}
         </div>
